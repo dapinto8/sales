@@ -2,6 +2,15 @@
   "name": "sales",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "webpack-cli serve",
+    "build": "webpack --mode production",
+    "serve": "serve dist -p 1337",
+    "react:start": "react-scripts start",
+    "react:build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
@@ -11,11 +20,15 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.63.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.4.0"
   },
   "eslintConfig": {
     "extends": [

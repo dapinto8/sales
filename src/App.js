@@ -1,9 +1,27 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const [display, setDisplay] = useState(true);
+
+  const triggerCustomEvent = () => {
+    const event = new CustomEvent('myCustomEvent', { detail: 'Hello from React' });
+    window.dispatchEvent(event);
+  }
+
+  const onClose = () => {
+    setDisplay(false)
+    setTimeout(() => {
+      const event = new CustomEvent('onUnmount', { detail: './Sales' });
+      window.dispatchEvent(event);
+    }, 500);
+  }
+
   return (
-    <div className="App">
+    <div className={`App ${display ? '' : 'App-closed'}`}>
+      <button className="App-close-button" onClick={onClose}>Close</button>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -17,6 +35,7 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={triggerCustomEvent}>Trigger Custom Event</button>
       </header>
     </div>
   );
