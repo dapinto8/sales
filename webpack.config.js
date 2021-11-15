@@ -67,8 +67,8 @@ module.exports = {
       shared: [
         {
           ...deps,
-          react: { singleton: true, eager: true },
-          'react-dom': { singleton: true, eager: true }
+          // react: { singleton: true, eager: true },
+          // 'react-dom': { singleton: true, eager: true }
         }
       ]
     }),

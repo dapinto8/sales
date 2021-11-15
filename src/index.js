@@ -1,5 +1,5 @@
 import('./bootstrap')
-  .then(({ default: bootstrap }) => {
+  .then(({ bootstrap }) => {
     bootstrap(document.getElementById('root'));
   })
   .catch(err => {
